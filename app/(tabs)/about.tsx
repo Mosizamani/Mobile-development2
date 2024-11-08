@@ -1,14 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const LotsOfStyles = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.red}>just red</Text>
-      <Text style={styles.bigBlue}>just bigBlue</Text>
-      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
-      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+        <Button title="Press me" onPress={() => alert('Button pressed')} />
+        <TextInput
+            style={{height: 40}}
+            placeholder="Type here to translate!"
+            onChangeText={text => text}
+         />
+        <ScrollView style={{height: 100}}></ScrollView>
     </View>
+
   );
 };
 
